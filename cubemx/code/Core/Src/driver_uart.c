@@ -56,7 +56,7 @@ static void UART_RecieveTask(void *parameters) {
 	}
 }
 
-static void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	if (huart->Instance == huart1->Instance) {
 		BaseType_t woken = pdFALSE;
 		vTaskNotifyGiveFromISR(UART_RecieveTaskHandle, &woken);
