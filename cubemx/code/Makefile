@@ -71,11 +71,16 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c \
 Core/Src/gpio.c \
 Core/Src/adc.c \
 Core/Src/tim.c \
-Core/Src/usart.c
+Core/Src/usart.c \
+Core/Src/driver_lcd.c \
+Core/Src/driver_temp.c \
+Core/Src/driver_uart.c \
+Core/Src/driver_motor.c \
+Core/Src/processing.c
 
 # ASM sources
 ASM_SOURCES =  \
-startup_stm32f103x6.s
+Core/Src/startup_stm32f103x6_init.s
 
 
 #######################################
@@ -142,10 +147,10 @@ C_INCLUDES =  \
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
-CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -mlong-calls
 
 ifeq ($(DEBUG), 1)
-CFLAGS += -g -gdwarf-2
+CFLAGS += -g -gdwarf-2 -fdebug-prefix-map==../
 endif
 
 

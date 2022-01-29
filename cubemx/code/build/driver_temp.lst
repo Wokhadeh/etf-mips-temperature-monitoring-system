@@ -1,0 +1,387 @@
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_temp.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_ui2f
+  16              		.global	__aeabi_fmul
+  17              		.section	.text.TEMP_Task,"ax",%progbits
+  18              		.align	1
+  19              		.arch armv7-m
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu softvfp
+  25              	TEMP_Task:
+  26              	.LFB70:
+  27              		.file 1 "../Core/Src/driver_temp.c"
+   1:../Core/Src/driver_temp.c **** 
+  28              		.loc 1 29 40 view -0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              	.LVL0:
+  34              		.loc 1 29 40 is_stmt 0 view .LVU1
+  35 0000 00B5     		push	{lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 14, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 16
+  42              	.LVL1:
+  43              	.L2:
+  44              		.loc 1 30 2 is_stmt 1 discriminator 1 view .LVU2
+  45              	.LBB2:
+  46              		.loc 1 31 3 discriminator 1 view .LVU3
+  47 0004 104C     		ldr	r4, .L4
+  48 0006 2046     		mov	r0, r4
+  49 0008 104B     		ldr	r3, .L4+4
+  50 000a 9847     		blx	r3
+  51              	.LVL2:
+  52              		.loc 1 32 3 discriminator 1 view .LVU4
+  53 000c 4FF0FF31 		mov	r1, #-1
+  54 0010 0120     		movs	r0, #1
+  55 0012 0F4B     		ldr	r3, .L4+8
+  56 0014 9847     		blx	r3
+  57              	.LVL3:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 2
+
+
+  58              		.loc 1 34 3 discriminator 1 view .LVU5
+  59              		.loc 1 34 17 is_stmt 0 discriminator 1 view .LVU6
+  60 0016 2046     		mov	r0, r4
+  61 0018 0E4B     		ldr	r3, .L4+12
+  62 001a 9847     		blx	r3
+  63              	.LVL4:
+  64              		.loc 1 34 9 discriminator 1 view .LVU7
+  65 001c 0E4B     		ldr	r3, .L4+16
+  66 001e 9847     		blx	r3
+  67              	.LVL5:
+  68 0020 0190     		str	r0, [sp, #4]	@ float
+  69              		.loc 1 36 3 is_stmt 1 discriminator 1 view .LVU8
+  70              		.loc 1 36 9 is_stmt 0 discriminator 1 view .LVU9
+  71 0022 0E4C     		ldr	r4, .L4+20
+  72 0024 0E49     		ldr	r1, .L4+24
+  73 0026 A047     		blx	r4
+  74              	.LVL6:
+  75 0028 0190     		str	r0, [sp, #4]	@ float
+  76              		.loc 1 37 3 is_stmt 1 discriminator 1 view .LVU10
+  77              		.loc 1 37 9 is_stmt 0 discriminator 1 view .LVU11
+  78 002a 0E49     		ldr	r1, .L4+28
+  79 002c A047     		blx	r4
+  80              	.LVL7:
+  81 002e 0190     		str	r0, [sp, #4]	@ float
+  82              		.loc 1 39 3 is_stmt 1 discriminator 1 view .LVU12
+  83 0030 0223     		movs	r3, #2
+  84 0032 0022     		movs	r2, #0
+  85 0034 01A9     		add	r1, sp, #4
+  86 0036 0C48     		ldr	r0, .L4+32
+  87 0038 0068     		ldr	r0, [r0]
+  88 003a 0C4C     		ldr	r4, .L4+36
+  89 003c A047     		blx	r4
+  90              	.LVL8:
+  91              		.loc 1 40 3 discriminator 1 view .LVU13
+  92 003e C820     		movs	r0, #200
+  93 0040 0B4B     		ldr	r3, .L4+40
+  94 0042 9847     		blx	r3
+  95              	.LVL9:
+  96              	.LBE2:
+  97              		.loc 1 30 7 discriminator 1 view .LVU14
+  98 0044 DEE7     		b	.L2
+  99              	.L5:
+ 100 0046 00BF     		.align	2
+ 101              	.L4:
+ 102 0048 00000000 		.word	hadc1
+ 103 004c 00000000 		.word	HAL_ADC_Start_IT
+ 104 0050 00000000 		.word	ulTaskNotifyTake
+ 105 0054 00000000 		.word	HAL_ADC_GetValue
+ 106 0058 00000000 		.word	__aeabi_ui2f
+ 107 005c 00000000 		.word	__aeabi_fmul
+ 108 0060 0000A03A 		.word	983564288
+ 109 0064 0000C842 		.word	1120403456
+ 110 0068 00000000 		.word	.LANCHOR0
+ 111 006c 00000000 		.word	xQueueGenericSend
+ 112 0070 00000000 		.word	vTaskDelay
+ 113              		.cfi_endproc
+ 114              	.LFE70:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 3
+
+
+ 116              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	HAL_ADC_ConvCpltCallback
+ 119              		.syntax unified
+ 120              		.thumb
+ 121              		.thumb_func
+ 122              		.fpu softvfp
+ 124              	HAL_ADC_ConvCpltCallback:
+ 125              	.LVL10:
+ 126              	.LFB69:
+ 127              		.loc 1 20 55 view -0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 8
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		.loc 1 21 2 view .LVU16
+ 132              		.loc 1 21 9 is_stmt 0 view .LVU17
+ 133 0000 0268     		ldr	r2, [r0]
+ 134              		.loc 1 21 28 view .LVU18
+ 135 0002 0E4B     		ldr	r3, .L14
+ 136 0004 1B68     		ldr	r3, [r3]
+ 137              		.loc 1 21 4 view .LVU19
+ 138 0006 9A42     		cmp	r2, r3
+ 139 0008 00D0     		beq	.L13
+ 140 000a 7047     		bx	lr
+ 141              	.L13:
+ 142              		.loc 1 20 55 view .LVU20
+ 143 000c 00B5     		push	{lr}
+ 144              	.LCFI2:
+ 145              		.cfi_def_cfa_offset 4
+ 146              		.cfi_offset 14, -4
+ 147 000e 83B0     		sub	sp, sp, #12
+ 148              	.LCFI3:
+ 149              		.cfi_def_cfa_offset 16
+ 150              	.LBB3:
+ 151              		.loc 1 22 3 is_stmt 1 view .LVU21
+ 152              		.loc 1 22 14 is_stmt 0 view .LVU22
+ 153 0010 0023     		movs	r3, #0
+ 154 0012 0193     		str	r3, [sp, #4]
+ 155              		.loc 1 23 3 is_stmt 1 view .LVU23
+ 156 0014 01A9     		add	r1, sp, #4
+ 157 0016 0A4B     		ldr	r3, .L14+4
+ 158 0018 1868     		ldr	r0, [r3]
+ 159              	.LVL11:
+ 160              		.loc 1 23 3 is_stmt 0 view .LVU24
+ 161 001a 0A4B     		ldr	r3, .L14+8
+ 162 001c 9847     		blx	r3
+ 163              	.LVL12:
+ 164              		.loc 1 24 3 is_stmt 1 view .LVU25
+ 165 001e 019B     		ldr	r3, [sp, #4]
+ 166 0020 4BB1     		cbz	r3, .L6
+ 167              		.loc 1 24 3 discriminator 1 view .LVU26
+ 168 0022 4FF0E023 		mov	r3, #-536813568
+ 169 0026 4FF08052 		mov	r2, #268435456
+ 170 002a C3F8042D 		str	r2, [r3, #3332]
+ 171              		.loc 1 24 3 discriminator 1 view .LVU27
+ 172              		.syntax unified
+ 173              	@ 24 "Core/Src/driver_temp.c" 1
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 4
+
+
+ 174 002e BFF34F8F 		dsb
+ 175              	@ 0 "" 2
+ 176              		.loc 1 24 3 discriminator 1 view .LVU28
+ 177              	@ 24 "Core/Src/driver_temp.c" 1
+ 178 0032 BFF36F8F 		isb
+ 179              	@ 0 "" 2
+ 180              		.loc 1 24 28 discriminator 1 view .LVU29
+ 181              		.thumb
+ 182              		.syntax unified
+ 183              	.L6:
+ 184              	.LBE3:
+ 185              		.loc 1 27 1 is_stmt 0 view .LVU30
+ 186 0036 03B0     		add	sp, sp, #12
+ 187              	.LCFI4:
+ 188              		.cfi_def_cfa_offset 4
+ 189              		@ sp needed
+ 190 0038 5DF804FB 		ldr	pc, [sp], #4
+ 191              	.L15:
+ 192              		.align	2
+ 193              	.L14:
+ 194 003c 00000000 		.word	hadc1
+ 195 0040 00000000 		.word	.LANCHOR1
+ 196 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 197              		.cfi_endproc
+ 198              	.LFE69:
+ 200              		.section	.text.TEMP_GetCurrentValue,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	TEMP_GetCurrentValue
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.fpu softvfp
+ 208              	TEMP_GetCurrentValue:
+ 209              	.LFB71:
+ 210              		.loc 1 45 29 is_stmt 1 view -0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 8
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 00B5     		push	{lr}
+ 215              	.LCFI5:
+ 216              		.cfi_def_cfa_offset 4
+ 217              		.cfi_offset 14, -4
+ 218 0002 83B0     		sub	sp, sp, #12
+ 219              	.LCFI6:
+ 220              		.cfi_def_cfa_offset 16
+ 221              		.loc 1 47 2 view .LVU32
+ 222              		.loc 1 47 8 is_stmt 0 view .LVU33
+ 223 0004 0023     		movs	r3, #0
+ 224 0006 0193     		str	r3, [sp, #4]	@ float
+ 225              		.loc 1 48 2 is_stmt 1 view .LVU34
+ 226 0008 4FF0FF32 		mov	r2, #-1
+ 227 000c 01A9     		add	r1, sp, #4
+ 228 000e 044B     		ldr	r3, .L18
+ 229 0010 1868     		ldr	r0, [r3]
+ 230 0012 044B     		ldr	r3, .L18+4
+ 231 0014 9847     		blx	r3
+ 232              	.LVL13:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 5
+
+
+ 233              		.loc 1 49 2 view .LVU35
+ 234              		.loc 1 50 1 is_stmt 0 view .LVU36
+ 235 0016 0198     		ldr	r0, [sp, #4]	@ float
+ 236 0018 03B0     		add	sp, sp, #12
+ 237              	.LCFI7:
+ 238              		.cfi_def_cfa_offset 4
+ 239              		@ sp needed
+ 240 001a 5DF804FB 		ldr	pc, [sp], #4
+ 241              	.L19:
+ 242 001e 00BF     		.align	2
+ 243              	.L18:
+ 244 0020 00000000 		.word	.LANCHOR0
+ 245 0024 00000000 		.word	xQueuePeek
+ 246              		.cfi_endproc
+ 247              	.LFE71:
+ 249              		.section	.rodata.TEMP_Init.str1.4,"aMS",%progbits,1
+ 250              		.align	2
+ 251              	.LC0:
+ 252 0000 54454D50 		.ascii	"TEMP_Task\000"
+ 252      5F546173 
+ 252      6B00
+ 253              		.section	.text.TEMP_Init,"ax",%progbits
+ 254              		.align	1
+ 255              		.global	TEMP_Init
+ 256              		.syntax unified
+ 257              		.thumb
+ 258              		.thumb_func
+ 259              		.fpu softvfp
+ 261              	TEMP_Init:
+ 262              	.LFB72:
+ 263              		.loc 1 52 17 is_stmt 1 view -0
+ 264              		.cfi_startproc
+ 265              		@ args = 0, pretend = 0, frame = 0
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267 0000 10B5     		push	{r4, lr}
+ 268              	.LCFI8:
+ 269              		.cfi_def_cfa_offset 8
+ 270              		.cfi_offset 4, -8
+ 271              		.cfi_offset 14, -4
+ 272 0002 82B0     		sub	sp, sp, #8
+ 273              	.LCFI9:
+ 274              		.cfi_def_cfa_offset 16
+ 275              		.loc 1 53 2 view .LVU38
+ 276 0004 094B     		ldr	r3, .L22
+ 277 0006 0193     		str	r3, [sp, #4]
+ 278 0008 0223     		movs	r3, #2
+ 279 000a 0093     		str	r3, [sp]
+ 280 000c 0023     		movs	r3, #0
+ 281 000e 4022     		movs	r2, #64
+ 282 0010 0749     		ldr	r1, .L22+4
+ 283 0012 0848     		ldr	r0, .L22+8
+ 284 0014 084C     		ldr	r4, .L22+12
+ 285 0016 A047     		blx	r4
+ 286              	.LVL14:
+ 287              		.loc 1 54 2 view .LVU39
+ 288              		.loc 1 54 21 is_stmt 0 view .LVU40
+ 289 0018 0022     		movs	r2, #0
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 6
+
+
+ 290 001a 0421     		movs	r1, #4
+ 291 001c 0120     		movs	r0, #1
+ 292 001e 074B     		ldr	r3, .L22+16
+ 293 0020 9847     		blx	r3
+ 294              	.LVL15:
+ 295              		.loc 1 54 19 view .LVU41
+ 296 0022 074B     		ldr	r3, .L22+20
+ 297 0024 1860     		str	r0, [r3]
+ 298              		.loc 1 55 1 view .LVU42
+ 299 0026 02B0     		add	sp, sp, #8
+ 300              	.LCFI10:
+ 301              		.cfi_def_cfa_offset 8
+ 302              		@ sp needed
+ 303 0028 10BD     		pop	{r4, pc}
+ 304              	.L23:
+ 305 002a 00BF     		.align	2
+ 306              	.L22:
+ 307 002c 00000000 		.word	.LANCHOR1
+ 308 0030 00000000 		.word	.LC0
+ 309 0034 00000000 		.word	TEMP_Task
+ 310 0038 00000000 		.word	xTaskCreate
+ 311 003c 00000000 		.word	xQueueGenericCreate
+ 312 0040 00000000 		.word	.LANCHOR0
+ 313              		.cfi_endproc
+ 314              	.LFE72:
+ 316              		.section	.bss.TEMP_QueueHandle,"aw",%nobits
+ 317              		.align	2
+ 318              		.set	.LANCHOR0,. + 0
+ 321              	TEMP_QueueHandle:
+ 322 0000 00000000 		.space	4
+ 323              		.section	.bss.TEMP_TaskHandle,"aw",%nobits
+ 324              		.align	2
+ 325              		.set	.LANCHOR1,. + 0
+ 328              	TEMP_TaskHandle:
+ 329 0000 00000000 		.space	4
+ 330              		.text
+ 331              	.Letext0:
+ 332              		.file 2 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\mac
+ 333              		.file 3 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\sys
+ 334              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 335              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 336              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 337              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 338              		.file 8 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 339              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 340              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 341              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
+ 342              		.file 12 "../Core/Inc/adc.h"
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_temp.c
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:18     .text.TEMP_Task:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:25     .text.TEMP_Task:0000000000000000 TEMP_Task
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:102    .text.TEMP_Task:0000000000000048 $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:117    .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:124    .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:194    .text.HAL_ADC_ConvCpltCallback:000000000000003c $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:201    .text.TEMP_GetCurrentValue:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:208    .text.TEMP_GetCurrentValue:0000000000000000 TEMP_GetCurrentValue
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:244    .text.TEMP_GetCurrentValue:0000000000000020 $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:250    .rodata.TEMP_Init.str1.4:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:254    .text.TEMP_Init:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:261    .text.TEMP_Init:0000000000000000 TEMP_Init
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:307    .text.TEMP_Init:000000000000002c $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:317    .bss.TEMP_QueueHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:321    .bss.TEMP_QueueHandle:0000000000000000 TEMP_QueueHandle
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:324    .bss.TEMP_TaskHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccRVIqAc.s:328    .bss.TEMP_TaskHandle:0000000000000000 TEMP_TaskHandle
+
+UNDEFINED SYMBOLS
+__aeabi_ui2f
+__aeabi_fmul
+hadc1
+HAL_ADC_Start_IT
+ulTaskNotifyTake
+HAL_ADC_GetValue
+xQueueGenericSend
+vTaskDelay
+vTaskNotifyGiveFromISR
+xQueuePeek
+xTaskCreate
+xQueueGenericCreate

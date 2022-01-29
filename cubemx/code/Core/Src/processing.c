@@ -38,7 +38,7 @@ static void processingTask(void* parameters){
 
 	while(1){
 		tempValue = TEMP_GetCurrentValue();
-		itoa(tempValue,tempText,10)
+		itoa(tempValue,tempText,10);
 
 		FanState fanStateTarget;
 
@@ -66,7 +66,7 @@ static void processingTask(void* parameters){
 		for (uint32_t i = 0; i < strlen(tempText); i++)
 		{
 			LCD_CommandEnqueue(LCD_DATA, tempText[i]);
-			UART_AsyncTransmitCharacter(tempText[i]);
+			UART_TransmitCharacter(tempText[i]);
 		}
 		vTaskDelay(pdMS_TO_TICKS(200));
 
@@ -76,7 +76,7 @@ static void processingTask(void* parameters){
 		for (uint32_t i = 0; i < strlen(tempText); i++)
 		{
 			LCD_CommandEnqueue(LCD_DATA, ' ');
-			UART_AsyncTransmitCharacter('\b');
+			UART_TransmitCharacter('\b');
 		}
 
 	}

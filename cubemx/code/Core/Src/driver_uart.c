@@ -30,7 +30,7 @@ static void UART_TransmitTask(void *parameters) {
 }
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart->Instance == huart1->Instance) {
+	if (huart->Instance == huart1.Instance) {
 		BaseType_t woken = pdFALSE;
 		vTaskNotifyGiveFromISR(UART_TransmitTaskHandle, &woken);
 		portYIELD_FROM_ISR(woken);
@@ -57,7 +57,7 @@ static void UART_RecieveTask(void *parameters) {
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart->Instance == huart1->Instance) {
+	if (huart->Instance == huart1.Instance) {
 		BaseType_t woken = pdFALSE;
 		vTaskNotifyGiveFromISR(UART_RecieveTaskHandle, &woken);
 		portYIELD_FROM_ISR(woken);

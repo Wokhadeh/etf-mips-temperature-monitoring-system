@@ -1,0 +1,476 @@
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"processing.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_f2uiz
+  16              		.section	.text.processingTask,"ax",%progbits
+  17              		.align	1
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	processingTask:
+  25              	.LVL0:
+  26              	.LFB4:
+  27              		.file 1 "../Core/Src/processing.c"
+   1:../Core/Src/processing.c **** 
+  28              		.loc 1 29 45 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 29 45 is_stmt 0 view .LVU1
+  33 0000 30B5     		push	{r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 85B0     		sub	sp, sp, #20
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 32
+  42              		.loc 1 30 2 is_stmt 1 view .LVU2
+  43              		.loc 1 30 7 is_stmt 0 view .LVU3
+  44 0004 374B     		ldr	r3, .L20
+  45 0006 6C46     		mov	r4, sp
+  46 0008 0FCB     		ldm	r3, {r0, r1, r2, r3}
+  47              	.LVL1:
+  48              		.loc 1 30 7 view .LVU4
+  49 000a 07C4     		stmia	r4!, {r0, r1, r2}
+  50 000c 2380     		strh	r3, [r4]	@ movhi
+  51 000e 0024     		movs	r4, #0
+  52 0010 ADF80E40 		strh	r4, [sp, #14]	@ movhi
+  53              		.loc 1 32 2 is_stmt 1 view .LVU5
+  54 0014 8021     		movs	r1, #128
+  55 0016 2046     		mov	r0, r4
+  56 0018 334B     		ldr	r3, .L20+4
+  57 001a 9847     		blx	r3
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 2
+
+
+  58              	.LVL2:
+  59              		.loc 1 34 2 view .LVU6
+  60              	.LBB2:
+  61              		.loc 1 34 6 view .LVU7
+  62              		.loc 1 34 2 is_stmt 0 view .LVU8
+  63 001c 0CE0     		b	.L2
+  64              	.LVL3:
+  65              	.L3:
+  66              		.loc 1 35 3 is_stmt 1 discriminator 3 view .LVU9
+  67              		.loc 1 35 36 is_stmt 0 discriminator 3 view .LVU10
+  68 001e 04AB     		add	r3, sp, #16
+  69 0020 2344     		add	r3, r3, r4
+  70 0022 13F8105C 		ldrb	r5, [r3, #-16]	@ zero_extendqisi2
+  71              		.loc 1 35 3 discriminator 3 view .LVU11
+  72 0026 2946     		mov	r1, r5
+  73 0028 0120     		movs	r0, #1
+  74 002a 2F4B     		ldr	r3, .L20+4
+  75 002c 9847     		blx	r3
+  76              	.LVL4:
+  77              		.loc 1 36 3 is_stmt 1 discriminator 3 view .LVU12
+  78 002e 2846     		mov	r0, r5
+  79 0030 2E4B     		ldr	r3, .L20+8
+  80 0032 9847     		blx	r3
+  81              	.LVL5:
+  82              		.loc 1 34 29 discriminator 3 view .LVU13
+  83              		.loc 1 34 30 is_stmt 0 discriminator 3 view .LVU14
+  84 0034 0134     		adds	r4, r4, #1
+  85              	.LVL6:
+  86              		.loc 1 34 30 discriminator 3 view .LVU15
+  87 0036 E4B2     		uxtb	r4, r4
+  88              	.LVL7:
+  89              	.L2:
+  90              		.loc 1 34 21 is_stmt 1 discriminator 1 view .LVU16
+  91              		.loc 1 34 2 is_stmt 0 discriminator 1 view .LVU17
+  92 0038 0F2C     		cmp	r4, #15
+  93 003a F0D9     		bls	.L3
+  94 003c 37E0     		b	.L13
+  95              	.LVL8:
+  96              	.L14:
+  97              		.loc 1 34 2 discriminator 1 view .LVU18
+  98              	.LBE2:
+  99              	.LBB3:
+ 100              		.loc 1 46 19 view .LVU19
+ 101 003e 0025     		movs	r5, #0
+ 102              	.L4:
+ 103              	.LVL9:
+ 104              		.loc 1 51 3 is_stmt 1 view .LVU20
+ 105              	.LBB4:
+ 106              		.loc 1 51 8 view .LVU21
+ 107              		.loc 1 51 17 is_stmt 0 view .LVU22
+ 108 0040 0024     		movs	r4, #0
+ 109              		.loc 1 51 3 view .LVU23
+ 110 0042 04E0     		b	.L5
+ 111              	.LVL10:
+ 112              	.L15:
+ 113              		.loc 1 51 3 view .LVU24
+ 114              	.LBE4:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 3
+
+
+ 115              		.loc 1 50 19 view .LVU25
+ 116 0044 0225     		movs	r5, #2
+ 117 0046 FBE7     		b	.L4
+ 118              	.LVL11:
+ 119              	.L6:
+ 120              	.LBB5:
+ 121              		.loc 1 59 5 is_stmt 1 view .LVU26
+ 122 0048 294B     		ldr	r3, .L20+12
+ 123 004a 9847     		blx	r3
+ 124              	.LVL12:
+ 125              	.L7:
+ 126              		.loc 1 51 60 discriminator 2 view .LVU27
+ 127              		.loc 1 51 61 is_stmt 0 discriminator 2 view .LVU28
+ 128 004c 0134     		adds	r4, r4, #1
+ 129              	.LVL13:
+ 130              	.L5:
+ 131              		.loc 1 51 24 is_stmt 1 discriminator 1 view .LVU29
+ 132              		.loc 1 51 47 is_stmt 0 discriminator 1 view .LVU30
+ 133 004e 294B     		ldr	r3, .L20+16
+ 134 0050 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 135 0052 AB1A     		subs	r3, r5, r2
+ 136              		.loc 1 51 28 discriminator 1 view .LVU31
+ 137 0054 002B     		cmp	r3, #0
+ 138 0056 B8BF     		it	lt
+ 139 0058 5B42     		rsblt	r3, r3, #0
+ 140              		.loc 1 51 3 discriminator 1 view .LVU32
+ 141 005a A342     		cmp	r3, r4
+ 142 005c 04D9     		bls	.L17
+ 143              		.loc 1 53 4 is_stmt 1 view .LVU33
+ 144              		.loc 1 53 7 is_stmt 0 view .LVU34
+ 145 005e AA42     		cmp	r2, r5
+ 146 0060 F2D2     		bcs	.L6
+ 147              		.loc 1 55 5 is_stmt 1 view .LVU35
+ 148 0062 254B     		ldr	r3, .L20+20
+ 149 0064 9847     		blx	r3
+ 150              	.LVL14:
+ 151 0066 F1E7     		b	.L7
+ 152              	.L17:
+ 153              	.LBE5:
+ 154              		.loc 1 62 5 view .LVU36
+ 155              		.loc 1 62 14 is_stmt 0 view .LVU37
+ 156 0068 224B     		ldr	r3, .L20+16
+ 157 006a 1D70     		strb	r5, [r3]
+ 158              		.loc 1 64 3 is_stmt 1 view .LVU38
+ 159 006c 8D21     		movs	r1, #141
+ 160 006e 0020     		movs	r0, #0
+ 161 0070 1D4B     		ldr	r3, .L20+4
+ 162 0072 9847     		blx	r3
+ 163              	.LVL15:
+ 164              		.loc 1 66 3 view .LVU39
+ 165              	.LBB6:
+ 166              		.loc 1 66 8 view .LVU40
+ 167              		.loc 1 66 17 is_stmt 0 view .LVU41
+ 168 0074 0024     		movs	r4, #0
+ 169              	.LVL16:
+ 170              	.L9:
+ 171              		.loc 1 66 24 is_stmt 1 discriminator 1 view .LVU42
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 4
+
+
+ 172              		.loc 1 66 28 is_stmt 0 discriminator 1 view .LVU43
+ 173 0076 2148     		ldr	r0, .L20+24
+ 174 0078 214B     		ldr	r3, .L20+28
+ 175 007a 9847     		blx	r3
+ 176              	.LVL17:
+ 177              		.loc 1 66 3 discriminator 1 view .LVU44
+ 178 007c A042     		cmp	r0, r4
+ 179 007e 09D9     		bls	.L18
+ 180              		.loc 1 68 4 is_stmt 1 discriminator 3 view .LVU45
+ 181              		.loc 1 68 41 is_stmt 0 discriminator 3 view .LVU46
+ 182 0080 1E4D     		ldr	r5, .L20+24
+ 183              		.loc 1 68 4 discriminator 3 view .LVU47
+ 184 0082 295D     		ldrb	r1, [r5, r4]	@ zero_extendqisi2
+ 185 0084 0120     		movs	r0, #1
+ 186 0086 184B     		ldr	r3, .L20+4
+ 187 0088 9847     		blx	r3
+ 188              	.LVL18:
+ 189              		.loc 1 69 4 is_stmt 1 discriminator 3 view .LVU48
+ 190 008a 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 191 008c 174B     		ldr	r3, .L20+8
+ 192 008e 9847     		blx	r3
+ 193              	.LVL19:
+ 194              		.loc 1 66 46 discriminator 3 view .LVU49
+ 195              		.loc 1 66 47 is_stmt 0 discriminator 3 view .LVU50
+ 196 0090 0134     		adds	r4, r4, #1
+ 197              	.LVL20:
+ 198              		.loc 1 66 47 discriminator 3 view .LVU51
+ 199 0092 F0E7     		b	.L9
+ 200              	.L18:
+ 201              		.loc 1 66 47 discriminator 3 view .LVU52
+ 202              	.LBE6:
+ 203              		.loc 1 71 3 is_stmt 1 view .LVU53
+ 204 0094 C820     		movs	r0, #200
+ 205 0096 1B4B     		ldr	r3, .L20+32
+ 206 0098 9847     		blx	r3
+ 207              	.LVL21:
+ 208              		.loc 1 74 3 view .LVU54
+ 209 009a 8D21     		movs	r1, #141
+ 210 009c 0020     		movs	r0, #0
+ 211 009e 124B     		ldr	r3, .L20+4
+ 212 00a0 9847     		blx	r3
+ 213              	.LVL22:
+ 214              		.loc 1 76 3 view .LVU55
+ 215              	.LBB7:
+ 216              		.loc 1 76 8 view .LVU56
+ 217              		.loc 1 76 17 is_stmt 0 view .LVU57
+ 218 00a2 0024     		movs	r4, #0
+ 219              	.LVL23:
+ 220              	.L11:
+ 221              		.loc 1 76 24 is_stmt 1 discriminator 1 view .LVU58
+ 222              		.loc 1 76 28 is_stmt 0 discriminator 1 view .LVU59
+ 223 00a4 1548     		ldr	r0, .L20+24
+ 224 00a6 164B     		ldr	r3, .L20+28
+ 225 00a8 9847     		blx	r3
+ 226              	.LVL24:
+ 227              		.loc 1 76 3 discriminator 1 view .LVU60
+ 228 00aa A042     		cmp	r0, r4
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 5
+
+
+ 229 00ac 10D8     		bhi	.L19
+ 230              	.LVL25:
+ 231              	.L13:
+ 232              		.loc 1 76 3 discriminator 1 view .LVU61
+ 233              	.LBE7:
+ 234              	.LBE3:
+ 235              		.loc 1 39 2 is_stmt 1 view .LVU62
+ 236              	.LBB9:
+ 237              		.loc 1 40 3 view .LVU63
+ 238              		.loc 1 40 15 is_stmt 0 view .LVU64
+ 239 00ae 164B     		ldr	r3, .L20+36
+ 240 00b0 9847     		blx	r3
+ 241              	.LVL26:
+ 242              		.loc 1 40 13 view .LVU65
+ 243 00b2 164B     		ldr	r3, .L20+40
+ 244 00b4 9847     		blx	r3
+ 245              	.LVL27:
+ 246 00b6 164C     		ldr	r4, .L20+44
+ 247 00b8 2060     		str	r0, [r4]
+ 248              		.loc 1 41 3 is_stmt 1 view .LVU66
+ 249 00ba 0A22     		movs	r2, #10
+ 250 00bc 0F49     		ldr	r1, .L20+24
+ 251 00be 154B     		ldr	r3, .L20+48
+ 252 00c0 9847     		blx	r3
+ 253              	.LVL28:
+ 254              		.loc 1 43 3 view .LVU67
+ 255              		.loc 1 45 3 view .LVU68
+ 256              		.loc 1 45 16 is_stmt 0 view .LVU69
+ 257 00c2 2368     		ldr	r3, [r4]
+ 258              		.loc 1 45 5 view .LVU70
+ 259 00c4 1E2B     		cmp	r3, #30
+ 260 00c6 BAD8     		bhi	.L14
+ 261              		.loc 1 47 8 is_stmt 1 view .LVU71
+ 262              		.loc 1 47 11 is_stmt 0 view .LVU72
+ 263 00c8 222B     		cmp	r3, #34
+ 264 00ca BBD8     		bhi	.L15
+ 265              		.loc 1 48 19 view .LVU73
+ 266 00cc 0125     		movs	r5, #1
+ 267 00ce B7E7     		b	.L4
+ 268              	.LVL29:
+ 269              	.L19:
+ 270              	.LBB8:
+ 271              		.loc 1 78 4 is_stmt 1 discriminator 3 view .LVU74
+ 272 00d0 2021     		movs	r1, #32
+ 273 00d2 0120     		movs	r0, #1
+ 274 00d4 044B     		ldr	r3, .L20+4
+ 275 00d6 9847     		blx	r3
+ 276              	.LVL30:
+ 277              		.loc 1 79 4 discriminator 3 view .LVU75
+ 278 00d8 0820     		movs	r0, #8
+ 279 00da 044B     		ldr	r3, .L20+8
+ 280 00dc 9847     		blx	r3
+ 281              	.LVL31:
+ 282              		.loc 1 76 46 discriminator 3 view .LVU76
+ 283              		.loc 1 76 47 is_stmt 0 discriminator 3 view .LVU77
+ 284 00de 0134     		adds	r4, r4, #1
+ 285              	.LVL32:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 6
+
+
+ 286              		.loc 1 76 47 discriminator 3 view .LVU78
+ 287 00e0 E0E7     		b	.L11
+ 288              	.L21:
+ 289 00e2 00BF     		.align	2
+ 290              	.L20:
+ 291 00e4 00000000 		.word	.LANCHOR0
+ 292 00e8 00000000 		.word	LCD_CommandEnqueue
+ 293 00ec 00000000 		.word	UART_TransmitCharacter
+ 294 00f0 00000000 		.word	MOTOR_SpeedDecrease
+ 295 00f4 00000000 		.word	.LANCHOR3
+ 296 00f8 00000000 		.word	MOTOR_SpeedIncrease
+ 297 00fc 00000000 		.word	.LANCHOR2
+ 298 0100 00000000 		.word	strlen
+ 299 0104 00000000 		.word	vTaskDelay
+ 300 0108 00000000 		.word	TEMP_GetCurrentValue
+ 301 010c 00000000 		.word	__aeabi_f2uiz
+ 302 0110 00000000 		.word	.LANCHOR1
+ 303 0114 00000000 		.word	itoa
+ 304              	.LBE8:
+ 305              	.LBE9:
+ 306              		.cfi_endproc
+ 307              	.LFE4:
+ 309              		.section	.rodata.processingInit.str1.4,"aMS",%progbits,1
+ 310              		.align	2
+ 311              	.LC1:
+ 312 0000 70726F63 		.ascii	"processingTask\000"
+ 312      65737369 
+ 312      6E675461 
+ 312      736B00
+ 313              		.section	.text.processingInit,"ax",%progbits
+ 314              		.align	1
+ 315              		.global	processingInit
+ 316              		.syntax unified
+ 317              		.thumb
+ 318              		.thumb_func
+ 319              		.fpu softvfp
+ 321              	processingInit:
+ 322              	.LFB5:
+ 323              		.loc 1 87 1 is_stmt 1 view -0
+ 324              		.cfi_startproc
+ 325              		@ args = 0, pretend = 0, frame = 0
+ 326              		@ frame_needed = 0, uses_anonymous_args = 0
+ 327 0000 10B5     		push	{r4, lr}
+ 328              	.LCFI2:
+ 329              		.cfi_def_cfa_offset 8
+ 330              		.cfi_offset 4, -8
+ 331              		.cfi_offset 14, -4
+ 332 0002 82B0     		sub	sp, sp, #8
+ 333              	.LCFI3:
+ 334              		.cfi_def_cfa_offset 16
+ 335              		.loc 1 88 2 view .LVU80
+ 336 0004 094B     		ldr	r3, .L24
+ 337 0006 9847     		blx	r3
+ 338              	.LVL33:
+ 339              		.loc 1 89 2 view .LVU81
+ 340 0008 094B     		ldr	r3, .L24+4
+ 341 000a 9847     		blx	r3
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 7
+
+
+ 342              	.LVL34:
+ 343              		.loc 1 90 2 view .LVU82
+ 344 000c 094B     		ldr	r3, .L24+8
+ 345 000e 9847     		blx	r3
+ 346              	.LVL35:
+ 347              		.loc 1 91 2 view .LVU83
+ 348 0010 094B     		ldr	r3, .L24+12
+ 349 0012 9847     		blx	r3
+ 350              	.LVL36:
+ 351              		.loc 1 92 2 view .LVU84
+ 352 0014 0023     		movs	r3, #0
+ 353 0016 0193     		str	r3, [sp, #4]
+ 354 0018 0522     		movs	r2, #5
+ 355 001a 0092     		str	r2, [sp]
+ 356 001c 4022     		movs	r2, #64
+ 357 001e 0749     		ldr	r1, .L24+16
+ 358 0020 0748     		ldr	r0, .L24+20
+ 359 0022 084C     		ldr	r4, .L24+24
+ 360 0024 A047     		blx	r4
+ 361              	.LVL37:
+ 362              		.loc 1 93 1 is_stmt 0 view .LVU85
+ 363 0026 02B0     		add	sp, sp, #8
+ 364              	.LCFI4:
+ 365              		.cfi_def_cfa_offset 8
+ 366              		@ sp needed
+ 367 0028 10BD     		pop	{r4, pc}
+ 368              	.L25:
+ 369 002a 00BF     		.align	2
+ 370              	.L24:
+ 371 002c 00000000 		.word	LCD_Init
+ 372 0030 00000000 		.word	UART_Init
+ 373 0034 00000000 		.word	MOTOR_Init
+ 374 0038 00000000 		.word	TEMP_Init
+ 375 003c 00000000 		.word	.LC1
+ 376 0040 00000000 		.word	processingTask
+ 377 0044 00000000 		.word	xTaskCreate
+ 378              		.cfi_endproc
+ 379              	.LFE5:
+ 381              		.global	fanState
+ 382              		.section	.rodata
+ 383              		.align	2
+ 384              		.set	.LANCHOR0,. + 0
+ 385              	.LC0:
+ 386 0000 54656D70 		.ascii	"Temperatura: \000"
+ 386      65726174 
+ 386      7572613A 
+ 386      2000
+ 387 000e 0000     		.space	2
+ 388              		.section	.bss.fanState,"aw",%nobits
+ 389              		.set	.LANCHOR3,. + 0
+ 392              	fanState:
+ 393 0000 00       		.space	1
+ 394              		.section	.bss.tempText,"aw",%nobits
+ 395              		.align	2
+ 396              		.set	.LANCHOR2,. + 0
+ 399              	tempText:
+ 400 0000 00000000 		.space	4
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 8
+
+
+ 401              		.section	.bss.tempValue,"aw",%nobits
+ 402              		.align	2
+ 403              		.set	.LANCHOR1,. + 0
+ 406              	tempValue:
+ 407 0000 00000000 		.space	4
+ 408              		.text
+ 409              	.Letext0:
+ 410              		.file 2 "../Core/Inc/processing.h"
+ 411              		.file 3 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\mac
+ 412              		.file 4 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\sys
+ 413              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 414              		.file 6 "../Core/Inc/driver_lcd.h"
+ 415              		.file 7 "../Core/Inc/driver_uart.h"
+ 416              		.file 8 "../Core/Inc/driver_motor.h"
+ 417              		.file 9 "../Core/Inc/driver_temp.h"
+ 418              		.file 10 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 419              		.file 11 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\st
+ 420              		.file 12 "../<built-in>"
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 processing.c
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:17     .text.processingTask:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:24     .text.processingTask:0000000000000000 processingTask
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:291    .text.processingTask:00000000000000e4 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:310    .rodata.processingInit.str1.4:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:314    .text.processingInit:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:321    .text.processingInit:0000000000000000 processingInit
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:371    .text.processingInit:000000000000002c $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:392    .bss.fanState:0000000000000000 fanState
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:383    .rodata:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:393    .bss.fanState:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:395    .bss.tempText:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:399    .bss.tempText:0000000000000000 tempText
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:402    .bss.tempValue:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccoU5jf2.s:406    .bss.tempValue:0000000000000000 tempValue
+
+UNDEFINED SYMBOLS
+__aeabi_f2uiz
+LCD_CommandEnqueue
+UART_TransmitCharacter
+MOTOR_SpeedDecrease
+MOTOR_SpeedIncrease
+strlen
+vTaskDelay
+TEMP_GetCurrentValue
+itoa
+LCD_Init
+UART_Init
+MOTOR_Init
+TEMP_Init
+xTaskCreate

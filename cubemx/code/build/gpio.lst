@@ -1,0 +1,146 @@
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"gpio.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  16              		.align	1
+  17              		.global	MX_GPIO_Init
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	MX_GPIO_Init:
+  25              	.LFB65:
+  26              		.file 1 "../Core/Src/gpio.c"
+   1:../Core/Src/gpio.c **** 
+  27              		.loc 1 37 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 24
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 86B0     		sub	sp, sp, #24
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 32
+  39              		.loc 1 39 3 view .LVU1
+  40              		.loc 1 39 20 is_stmt 0 view .LVU2
+  41 0004 0022     		movs	r2, #0
+  42 0006 0292     		str	r2, [sp, #8]
+  43 0008 0392     		str	r2, [sp, #12]
+  44 000a 0492     		str	r2, [sp, #16]
+  45 000c 0592     		str	r2, [sp, #20]
+  46              		.loc 1 42 3 is_stmt 1 view .LVU3
+  47              	.LBB2:
+  48              		.loc 1 42 3 view .LVU4
+  49              		.loc 1 42 3 view .LVU5
+  50 000e 124B     		ldr	r3, .L3
+  51 0010 9969     		ldr	r1, [r3, #24]
+  52 0012 41F01001 		orr	r1, r1, #16
+  53 0016 9961     		str	r1, [r3, #24]
+  54              		.loc 1 42 3 view .LVU6
+  55 0018 9969     		ldr	r1, [r3, #24]
+  56 001a 01F01001 		and	r1, r1, #16
+  57 001e 0091     		str	r1, [sp]
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s 			page 2
+
+
+  58              		.loc 1 42 3 view .LVU7
+  59 0020 0099     		ldr	r1, [sp]
+  60              	.LBE2:
+  61              		.loc 1 42 3 view .LVU8
+  62              		.loc 1 43 3 view .LVU9
+  63              	.LBB3:
+  64              		.loc 1 43 3 view .LVU10
+  65              		.loc 1 43 3 view .LVU11
+  66 0022 9969     		ldr	r1, [r3, #24]
+  67 0024 41F00401 		orr	r1, r1, #4
+  68 0028 9961     		str	r1, [r3, #24]
+  69              		.loc 1 43 3 view .LVU12
+  70 002a 9B69     		ldr	r3, [r3, #24]
+  71 002c 03F00403 		and	r3, r3, #4
+  72 0030 0193     		str	r3, [sp, #4]
+  73              		.loc 1 43 3 view .LVU13
+  74 0032 019B     		ldr	r3, [sp, #4]
+  75              	.LBE3:
+  76              		.loc 1 43 3 view .LVU14
+  77              		.loc 1 46 3 view .LVU15
+  78 0034 094C     		ldr	r4, .L3+4
+  79 0036 7F21     		movs	r1, #127
+  80 0038 2046     		mov	r0, r4
+  81 003a 094B     		ldr	r3, .L3+8
+  82 003c 9847     		blx	r3
+  83              	.LVL0:
+  84              		.loc 1 51 3 view .LVU16
+  85              		.loc 1 51 23 is_stmt 0 view .LVU17
+  86 003e 7F23     		movs	r3, #127
+  87 0040 0293     		str	r3, [sp, #8]
+  88              		.loc 1 53 3 is_stmt 1 view .LVU18
+  89              		.loc 1 53 24 is_stmt 0 view .LVU19
+  90 0042 0123     		movs	r3, #1
+  91 0044 0393     		str	r3, [sp, #12]
+  92              		.loc 1 54 3 is_stmt 1 view .LVU20
+  93              		.loc 1 54 24 is_stmt 0 view .LVU21
+  94 0046 0223     		movs	r3, #2
+  95 0048 0493     		str	r3, [sp, #16]
+  96              		.loc 1 55 3 is_stmt 1 view .LVU22
+  97              		.loc 1 55 25 is_stmt 0 view .LVU23
+  98 004a 0593     		str	r3, [sp, #20]
+  99              		.loc 1 56 3 is_stmt 1 view .LVU24
+ 100 004c 02A9     		add	r1, sp, #8
+ 101 004e 2046     		mov	r0, r4
+ 102 0050 044B     		ldr	r3, .L3+12
+ 103 0052 9847     		blx	r3
+ 104              	.LVL1:
+ 105              		.loc 1 58 1 is_stmt 0 view .LVU25
+ 106 0054 06B0     		add	sp, sp, #24
+ 107              	.LCFI2:
+ 108              		.cfi_def_cfa_offset 8
+ 109              		@ sp needed
+ 110 0056 10BD     		pop	{r4, pc}
+ 111              	.L4:
+ 112              		.align	2
+ 113              	.L3:
+ 114 0058 00100240 		.word	1073876992
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s 			page 3
+
+
+ 115 005c 00100140 		.word	1073811456
+ 116 0060 00000000 		.word	HAL_GPIO_WritePin
+ 117 0064 00000000 		.word	HAL_GPIO_Init
+ 118              		.cfi_endproc
+ 119              	.LFE65:
+ 121              		.text
+ 122              	.Letext0:
+ 123              		.file 2 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\mac
+ 124              		.file 3 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\sys
+ 125              		.file 4 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 126              		.file 5 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gpio.c
+C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s:16     .text.MX_GPIO_Init:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+C:\Users\wokad\AppData\Local\Temp\cc88p4bv.s:114    .text.MX_GPIO_Init:0000000000000058 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init

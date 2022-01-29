@@ -1,0 +1,1162 @@
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_uart.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.UART_RecieveTask,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	UART_RecieveTask:
+  24              	.LFB71:
+  25              		.file 1 "../Core/Src/driver_uart.c"
+   1:../Core/Src/driver_uart.c **** 
+  26              		.loc 1 47 48 view -0
+  27              		.cfi_startproc
+  28              		@ Volatile: function does not return.
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32              		.loc 1 47 48 is_stmt 0 view .LVU1
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 83B0     		sub	sp, sp, #12
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40              	.LVL1:
+  41              	.L2:
+  42              		.loc 1 49 2 is_stmt 1 discriminator 1 view .LVU2
+  43              		.loc 1 50 2 discriminator 1 view .LVU3
+  44              		.loc 1 52 3 discriminator 1 view .LVU4
+  45 0004 0122     		movs	r2, #1
+  46 0006 0DF10701 		add	r1, sp, #7
+  47 000a 0848     		ldr	r0, .L4
+  48 000c 084B     		ldr	r3, .L4+4
+  49 000e 9847     		blx	r3
+  50              	.LVL2:
+  51              		.loc 1 53 3 discriminator 1 view .LVU5
+  52 0010 4FF0FF31 		mov	r1, #-1
+  53 0014 0120     		movs	r0, #1
+  54 0016 074B     		ldr	r3, .L4+8
+  55 0018 9847     		blx	r3
+  56              	.LVL3:
+  57              		.loc 1 54 3 discriminator 1 view .LVU6
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 2
+
+
+  58 001a 0023     		movs	r3, #0
+  59 001c 0122     		movs	r2, #1
+  60 001e 0DF10701 		add	r1, sp, #7
+  61 0022 0548     		ldr	r0, .L4+12
+  62 0024 054C     		ldr	r4, .L4+16
+  63 0026 A047     		blx	r4
+  64              	.LVL4:
+  65              		.loc 1 50 8 discriminator 1 view .LVU7
+  66 0028 ECE7     		b	.L2
+  67              	.L5:
+  68 002a 00BF     		.align	2
+  69              	.L4:
+  70 002c 00000000 		.word	huart1
+  71 0030 00000000 		.word	HAL_UART_Receive_IT
+  72 0034 00000000 		.word	ulTaskNotifyTake
+  73 0038 00000000 		.word	.LANCHOR0
+  74 003c 00000000 		.word	xQueueGenericSend
+  75              		.cfi_endproc
+  76              	.LFE71:
+  78              		.section	.text.UART_TransmitTask,"ax",%progbits
+  79              		.align	1
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  83              		.fpu softvfp
+  85              	UART_TransmitTask:
+  86              	.LFB69:
+  87              		.loc 1 23 49 view -0
+  88              		.cfi_startproc
+  89              		@ Volatile: function does not return.
+  90              		@ args = 0, pretend = 0, frame = 8
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              	.LVL5:
+  93              		.loc 1 23 49 is_stmt 0 view .LVU9
+  94 0000 00B5     		push	{lr}
+  95              	.LCFI2:
+  96              		.cfi_def_cfa_offset 4
+  97              		.cfi_offset 14, -4
+  98 0002 83B0     		sub	sp, sp, #12
+  99              	.LCFI3:
+ 100              		.cfi_def_cfa_offset 16
+ 101              	.LVL6:
+ 102              	.L7:
+ 103              		.loc 1 24 2 is_stmt 1 discriminator 1 view .LVU10
+ 104              		.loc 1 25 2 discriminator 1 view .LVU11
+ 105              		.loc 1 26 3 discriminator 1 view .LVU12
+ 106 0004 4FF0FF32 		mov	r2, #-1
+ 107 0008 0DF10701 		add	r1, sp, #7
+ 108 000c 074B     		ldr	r3, .L9
+ 109 000e 1868     		ldr	r0, [r3]
+ 110 0010 074B     		ldr	r3, .L9+4
+ 111 0012 9847     		blx	r3
+ 112              	.LVL7:
+ 113              		.loc 1 27 3 discriminator 1 view .LVU13
+ 114 0014 0122     		movs	r2, #1
+ 115 0016 0DF10701 		add	r1, sp, #7
+ 116 001a 0648     		ldr	r0, .L9+8
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 3
+
+
+ 117 001c 064B     		ldr	r3, .L9+12
+ 118 001e 9847     		blx	r3
+ 119              	.LVL8:
+ 120              		.loc 1 28 3 discriminator 1 view .LVU14
+ 121 0020 4FF0FF31 		mov	r1, #-1
+ 122 0024 0120     		movs	r0, #1
+ 123 0026 054B     		ldr	r3, .L9+16
+ 124 0028 9847     		blx	r3
+ 125              	.LVL9:
+ 126              		.loc 1 25 8 discriminator 1 view .LVU15
+ 127 002a EBE7     		b	.L7
+ 128              	.L10:
+ 129              		.align	2
+ 130              	.L9:
+ 131 002c 00000000 		.word	.LANCHOR1
+ 132 0030 00000000 		.word	xQueueReceive
+ 133 0034 00000000 		.word	huart1
+ 134 0038 00000000 		.word	HAL_UART_Transmit_IT
+ 135 003c 00000000 		.word	ulTaskNotifyTake
+ 136              		.cfi_endproc
+ 137              	.LFE69:
+ 139              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	HAL_UART_TxCpltCallback
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.fpu softvfp
+ 147              	HAL_UART_TxCpltCallback:
+ 148              	.LVL10:
+ 149              	.LFB70:
+ 150              		.loc 1 32 57 view -0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 8
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154              		.loc 1 33 2 view .LVU17
+ 155              		.loc 1 33 11 is_stmt 0 view .LVU18
+ 156 0000 0268     		ldr	r2, [r0]
+ 157              		.loc 1 33 31 view .LVU19
+ 158 0002 0E4B     		ldr	r3, .L19
+ 159 0004 1B68     		ldr	r3, [r3]
+ 160              		.loc 1 33 5 view .LVU20
+ 161 0006 9A42     		cmp	r2, r3
+ 162 0008 00D0     		beq	.L18
+ 163 000a 7047     		bx	lr
+ 164              	.L18:
+ 165              		.loc 1 32 57 view .LVU21
+ 166 000c 00B5     		push	{lr}
+ 167              	.LCFI4:
+ 168              		.cfi_def_cfa_offset 4
+ 169              		.cfi_offset 14, -4
+ 170 000e 83B0     		sub	sp, sp, #12
+ 171              	.LCFI5:
+ 172              		.cfi_def_cfa_offset 16
+ 173              	.LBB2:
+ 174              		.loc 1 34 3 is_stmt 1 view .LVU22
+ 175              		.loc 1 34 14 is_stmt 0 view .LVU23
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 4
+
+
+ 176 0010 0023     		movs	r3, #0
+ 177 0012 0193     		str	r3, [sp, #4]
+ 178              		.loc 1 35 3 is_stmt 1 view .LVU24
+ 179 0014 01A9     		add	r1, sp, #4
+ 180 0016 0A4B     		ldr	r3, .L19+4
+ 181 0018 1868     		ldr	r0, [r3]
+ 182              	.LVL11:
+ 183              		.loc 1 35 3 is_stmt 0 view .LVU25
+ 184 001a 0A4B     		ldr	r3, .L19+8
+ 185 001c 9847     		blx	r3
+ 186              	.LVL12:
+ 187              		.loc 1 36 3 is_stmt 1 view .LVU26
+ 188 001e 019B     		ldr	r3, [sp, #4]
+ 189 0020 4BB1     		cbz	r3, .L11
+ 190              		.loc 1 36 3 discriminator 1 view .LVU27
+ 191 0022 4FF0E023 		mov	r3, #-536813568
+ 192 0026 4FF08052 		mov	r2, #268435456
+ 193 002a C3F8042D 		str	r2, [r3, #3332]
+ 194              		.loc 1 36 3 discriminator 1 view .LVU28
+ 195              		.syntax unified
+ 196              	@ 36 "Core/Src/driver_uart.c" 1
+ 197 002e BFF34F8F 		dsb
+ 198              	@ 0 "" 2
+ 199              		.loc 1 36 3 discriminator 1 view .LVU29
+ 200              	@ 36 "Core/Src/driver_uart.c" 1
+ 201 0032 BFF36F8F 		isb
+ 202              	@ 0 "" 2
+ 203              		.loc 1 36 28 discriminator 1 view .LVU30
+ 204              		.thumb
+ 205              		.syntax unified
+ 206              	.L11:
+ 207              	.LBE2:
+ 208              		.loc 1 39 1 is_stmt 0 view .LVU31
+ 209 0036 03B0     		add	sp, sp, #12
+ 210              	.LCFI6:
+ 211              		.cfi_def_cfa_offset 4
+ 212              		@ sp needed
+ 213 0038 5DF804FB 		ldr	pc, [sp], #4
+ 214              	.L20:
+ 215              		.align	2
+ 216              	.L19:
+ 217 003c 00000000 		.word	huart1
+ 218 0040 00000000 		.word	.LANCHOR2
+ 219 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 220              		.cfi_endproc
+ 221              	.LFE70:
+ 223              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 224              		.align	1
+ 225              		.global	HAL_UART_RxCpltCallback
+ 226              		.syntax unified
+ 227              		.thumb
+ 228              		.thumb_func
+ 229              		.fpu softvfp
+ 231              	HAL_UART_RxCpltCallback:
+ 232              	.LVL13:
+ 233              	.LFB72:
+ 234              		.loc 1 59 57 is_stmt 1 view -0
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 5
+
+
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 8
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		.loc 1 60 2 view .LVU33
+ 239              		.loc 1 60 11 is_stmt 0 view .LVU34
+ 240 0000 0268     		ldr	r2, [r0]
+ 241              		.loc 1 60 31 view .LVU35
+ 242 0002 0E4B     		ldr	r3, .L29
+ 243 0004 1B68     		ldr	r3, [r3]
+ 244              		.loc 1 60 5 view .LVU36
+ 245 0006 9A42     		cmp	r2, r3
+ 246 0008 00D0     		beq	.L28
+ 247 000a 7047     		bx	lr
+ 248              	.L28:
+ 249              		.loc 1 59 57 view .LVU37
+ 250 000c 00B5     		push	{lr}
+ 251              	.LCFI7:
+ 252              		.cfi_def_cfa_offset 4
+ 253              		.cfi_offset 14, -4
+ 254 000e 83B0     		sub	sp, sp, #12
+ 255              	.LCFI8:
+ 256              		.cfi_def_cfa_offset 16
+ 257              	.LBB3:
+ 258              		.loc 1 61 3 is_stmt 1 view .LVU38
+ 259              		.loc 1 61 14 is_stmt 0 view .LVU39
+ 260 0010 0023     		movs	r3, #0
+ 261 0012 0193     		str	r3, [sp, #4]
+ 262              		.loc 1 62 3 is_stmt 1 view .LVU40
+ 263 0014 01A9     		add	r1, sp, #4
+ 264 0016 0A4B     		ldr	r3, .L29+4
+ 265 0018 1868     		ldr	r0, [r3]
+ 266              	.LVL14:
+ 267              		.loc 1 62 3 is_stmt 0 view .LVU41
+ 268 001a 0A4B     		ldr	r3, .L29+8
+ 269 001c 9847     		blx	r3
+ 270              	.LVL15:
+ 271              		.loc 1 63 3 is_stmt 1 view .LVU42
+ 272 001e 019B     		ldr	r3, [sp, #4]
+ 273 0020 4BB1     		cbz	r3, .L21
+ 274              		.loc 1 63 3 discriminator 1 view .LVU43
+ 275 0022 4FF0E023 		mov	r3, #-536813568
+ 276 0026 4FF08052 		mov	r2, #268435456
+ 277 002a C3F8042D 		str	r2, [r3, #3332]
+ 278              		.loc 1 63 3 discriminator 1 view .LVU44
+ 279              		.syntax unified
+ 280              	@ 63 "Core/Src/driver_uart.c" 1
+ 281 002e BFF34F8F 		dsb
+ 282              	@ 0 "" 2
+ 283              		.loc 1 63 3 discriminator 1 view .LVU45
+ 284              	@ 63 "Core/Src/driver_uart.c" 1
+ 285 0032 BFF36F8F 		isb
+ 286              	@ 0 "" 2
+ 287              		.loc 1 63 28 discriminator 1 view .LVU46
+ 288              		.thumb
+ 289              		.syntax unified
+ 290              	.L21:
+ 291              	.LBE3:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 6
+
+
+ 292              		.loc 1 66 1 is_stmt 0 view .LVU47
+ 293 0036 03B0     		add	sp, sp, #12
+ 294              	.LCFI9:
+ 295              		.cfi_def_cfa_offset 4
+ 296              		@ sp needed
+ 297 0038 5DF804FB 		ldr	pc, [sp], #4
+ 298              	.L30:
+ 299              		.align	2
+ 300              	.L29:
+ 301 003c 00000000 		.word	huart1
+ 302 0040 00000000 		.word	.LANCHOR3
+ 303 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 304              		.cfi_endproc
+ 305              	.LFE72:
+ 307              		.section	.text.UART_TransmitCharacter,"ax",%progbits
+ 308              		.align	1
+ 309              		.global	UART_TransmitCharacter
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 313              		.fpu softvfp
+ 315              	UART_TransmitCharacter:
+ 316              	.LVL16:
+ 317              	.LFB73:
+ 318              		.loc 1 70 45 is_stmt 1 view -0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 8
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322              		.loc 1 70 45 is_stmt 0 view .LVU49
+ 323 0000 30B5     		push	{r4, r5, lr}
+ 324              	.LCFI10:
+ 325              		.cfi_def_cfa_offset 12
+ 326              		.cfi_offset 4, -12
+ 327              		.cfi_offset 5, -8
+ 328              		.cfi_offset 14, -4
+ 329 0002 83B0     		sub	sp, sp, #12
+ 330              	.LCFI11:
+ 331              		.cfi_def_cfa_offset 24
+ 332 0004 8DF80700 		strb	r0, [sp, #7]
+ 333              		.loc 1 71 2 is_stmt 1 view .LVU50
+ 334 0008 0A4D     		ldr	r5, .L33
+ 335 000a 4FF0FF31 		mov	r1, #-1
+ 336 000e 2868     		ldr	r0, [r5]
+ 337              	.LVL17:
+ 338              		.loc 1 71 2 is_stmt 0 view .LVU51
+ 339 0010 094B     		ldr	r3, .L33+4
+ 340 0012 9847     		blx	r3
+ 341              	.LVL18:
+ 342              		.loc 1 73 2 is_stmt 1 view .LVU52
+ 343 0014 0023     		movs	r3, #0
+ 344 0016 4FF0FF32 		mov	r2, #-1
+ 345 001a 0DF10701 		add	r1, sp, #7
+ 346 001e 0748     		ldr	r0, .L33+8
+ 347 0020 074C     		ldr	r4, .L33+12
+ 348 0022 A047     		blx	r4
+ 349              	.LVL19:
+ 350              		.loc 1 75 2 view .LVU53
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 7
+
+
+ 351 0024 0023     		movs	r3, #0
+ 352 0026 1A46     		mov	r2, r3
+ 353 0028 1946     		mov	r1, r3
+ 354 002a 2868     		ldr	r0, [r5]
+ 355 002c A047     		blx	r4
+ 356              	.LVL20:
+ 357              		.loc 1 76 1 is_stmt 0 view .LVU54
+ 358 002e 03B0     		add	sp, sp, #12
+ 359              	.LCFI12:
+ 360              		.cfi_def_cfa_offset 12
+ 361              		@ sp needed
+ 362 0030 30BD     		pop	{r4, r5, pc}
+ 363              	.L34:
+ 364 0032 00BF     		.align	2
+ 365              	.L33:
+ 366 0034 00000000 		.word	.LANCHOR4
+ 367 0038 00000000 		.word	xQueueSemaphoreTake
+ 368 003c 00000000 		.word	.LANCHOR1
+ 369 0040 00000000 		.word	xQueueGenericSend
+ 370              		.cfi_endproc
+ 371              	.LFE73:
+ 373              		.section	.text.UART_TransmitString,"ax",%progbits
+ 374              		.align	1
+ 375              		.global	UART_TransmitString
+ 376              		.syntax unified
+ 377              		.thumb
+ 378              		.thumb_func
+ 379              		.fpu softvfp
+ 381              	UART_TransmitString:
+ 382              	.LVL21:
+ 383              	.LFB74:
+ 384              		.loc 1 78 46 is_stmt 1 view -0
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 0
+ 387              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388              		.loc 1 78 46 is_stmt 0 view .LVU56
+ 389 0000 70B5     		push	{r4, r5, r6, lr}
+ 390              	.LCFI13:
+ 391              		.cfi_def_cfa_offset 16
+ 392              		.cfi_offset 4, -16
+ 393              		.cfi_offset 5, -12
+ 394              		.cfi_offset 6, -8
+ 395              		.cfi_offset 14, -4
+ 396 0002 0546     		mov	r5, r0
+ 397              		.loc 1 79 2 is_stmt 1 view .LVU57
+ 398 0004 4FF0FF31 		mov	r1, #-1
+ 399 0008 0D4B     		ldr	r3, .L39
+ 400 000a 1868     		ldr	r0, [r3]
+ 401              	.LVL22:
+ 402              		.loc 1 79 2 is_stmt 0 view .LVU58
+ 403 000c 0D4B     		ldr	r3, .L39+4
+ 404 000e 9847     		blx	r3
+ 405              	.LVL23:
+ 406              		.loc 1 81 2 is_stmt 1 view .LVU59
+ 407              	.LBB4:
+ 408              		.loc 1 81 7 view .LVU60
+ 409              		.loc 1 81 15 is_stmt 0 view .LVU61
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 8
+
+
+ 410 0010 0024     		movs	r4, #0
+ 411              		.loc 1 81 2 view .LVU62
+ 412 0012 08E0     		b	.L36
+ 413              	.LVL24:
+ 414              	.L37:
+ 415              		.loc 1 82 3 is_stmt 1 discriminator 3 view .LVU63
+ 416 0014 0023     		movs	r3, #0
+ 417 0016 4FF0FF32 		mov	r2, #-1
+ 418 001a 2919     		adds	r1, r5, r4
+ 419 001c 0A48     		ldr	r0, .L39+8
+ 420 001e 0B4E     		ldr	r6, .L39+12
+ 421 0020 B047     		blx	r6
+ 422              	.LVL25:
+ 423              		.loc 1 81 42 discriminator 3 view .LVU64
+ 424              		.loc 1 81 43 is_stmt 0 discriminator 3 view .LVU65
+ 425 0022 0134     		adds	r4, r4, #1
+ 426              	.LVL26:
+ 427              		.loc 1 81 43 discriminator 3 view .LVU66
+ 428 0024 E4B2     		uxtb	r4, r4
+ 429              	.LVL27:
+ 430              	.L36:
+ 431              		.loc 1 81 22 is_stmt 1 discriminator 1 view .LVU67
+ 432              		.loc 1 81 26 is_stmt 0 discriminator 1 view .LVU68
+ 433 0026 2846     		mov	r0, r5
+ 434 0028 094B     		ldr	r3, .L39+16
+ 435 002a 9847     		blx	r3
+ 436              	.LVL28:
+ 437              		.loc 1 81 2 discriminator 1 view .LVU69
+ 438 002c 8442     		cmp	r4, r0
+ 439 002e F1D3     		bcc	.L37
+ 440              	.LBE4:
+ 441              		.loc 1 85 2 is_stmt 1 view .LVU70
+ 442 0030 0023     		movs	r3, #0
+ 443 0032 1A46     		mov	r2, r3
+ 444 0034 1946     		mov	r1, r3
+ 445 0036 0248     		ldr	r0, .L39
+ 446 0038 0068     		ldr	r0, [r0]
+ 447 003a 044C     		ldr	r4, .L39+12
+ 448              	.LVL29:
+ 449              		.loc 1 85 2 is_stmt 0 view .LVU71
+ 450 003c A047     		blx	r4
+ 451              	.LVL30:
+ 452              		.loc 1 86 1 view .LVU72
+ 453 003e 70BD     		pop	{r4, r5, r6, pc}
+ 454              	.LVL31:
+ 455              	.L40:
+ 456              		.loc 1 86 1 view .LVU73
+ 457              		.align	2
+ 458              	.L39:
+ 459 0040 00000000 		.word	.LANCHOR4
+ 460 0044 00000000 		.word	xQueueSemaphoreTake
+ 461 0048 00000000 		.word	.LANCHOR1
+ 462 004c 00000000 		.word	xQueueGenericSend
+ 463 0050 00000000 		.word	strlen
+ 464              		.cfi_endproc
+ 465              	.LFE74:
+ 467              		.section	.text.UART_TransmitDecimal,"ax",%progbits
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 9
+
+
+ 468              		.align	1
+ 469              		.global	UART_TransmitDecimal
+ 470              		.syntax unified
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.fpu softvfp
+ 475              	UART_TransmitDecimal:
+ 476              	.LVL32:
+ 477              	.LFB75:
+ 478              		.loc 1 88 45 is_stmt 1 view -0
+ 479              		.cfi_startproc
+ 480              		@ args = 0, pretend = 0, frame = 32
+ 481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 482              		.loc 1 88 45 is_stmt 0 view .LVU75
+ 483 0000 30B5     		push	{r4, r5, lr}
+ 484              	.LCFI14:
+ 485              		.cfi_def_cfa_offset 12
+ 486              		.cfi_offset 4, -12
+ 487              		.cfi_offset 5, -8
+ 488              		.cfi_offset 14, -4
+ 489 0002 89B0     		sub	sp, sp, #36
+ 490              	.LCFI15:
+ 491              		.cfi_def_cfa_offset 48
+ 492 0004 0546     		mov	r5, r0
+ 493              		.loc 1 89 2 is_stmt 1 view .LVU76
+ 494 0006 4FF0FF31 		mov	r1, #-1
+ 495 000a 174B     		ldr	r3, .L47
+ 496 000c 1868     		ldr	r0, [r3]
+ 497              	.LVL33:
+ 498              		.loc 1 89 2 is_stmt 0 view .LVU77
+ 499 000e 174B     		ldr	r3, .L47+4
+ 500 0010 9847     		blx	r3
+ 501              	.LVL34:
+ 502              		.loc 1 90 2 is_stmt 1 view .LVU78
+ 503              		.loc 1 91 2 view .LVU79
+ 504              		.loc 1 92 2 view .LVU80
+ 505              		.loc 1 91 10 is_stmt 0 view .LVU81
+ 506 0012 2024     		movs	r4, #32
+ 507              		.loc 1 92 8 view .LVU82
+ 508 0014 10E0     		b	.L42
+ 509              	.LVL35:
+ 510              	.L43:
+ 511              		.loc 1 93 3 is_stmt 1 view .LVU83
+ 512              		.loc 1 93 35 is_stmt 0 view .LVU84
+ 513 0016 164B     		ldr	r3, .L47+8
+ 514 0018 A3FB0523 		umull	r2, r3, r3, r5
+ 515 001c DB08     		lsrs	r3, r3, #3
+ 516 001e 1A46     		mov	r2, r3
+ 517 0020 03EB8303 		add	r3, r3, r3, lsl #2
+ 518 0024 A5EB4303 		sub	r3, r5, r3, lsl #1
+ 519              		.loc 1 93 19 view .LVU85
+ 520 0028 013C     		subs	r4, r4, #1
+ 521              	.LVL36:
+ 522              		.loc 1 93 19 view .LVU86
+ 523 002a E4B2     		uxtb	r4, r4
+ 524              	.LVL37:
+ 525              		.loc 1 93 25 view .LVU87
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 10
+
+
+ 526 002c 3033     		adds	r3, r3, #48
+ 527              		.loc 1 93 19 view .LVU88
+ 528 002e 08A9     		add	r1, sp, #32
+ 529 0030 2144     		add	r1, r1, r4
+ 530 0032 01F8203C 		strb	r3, [r1, #-32]
+ 531              		.loc 1 94 3 is_stmt 1 view .LVU89
+ 532              		.loc 1 94 11 is_stmt 0 view .LVU90
+ 533 0036 1546     		mov	r5, r2
+ 534              	.LVL38:
+ 535              	.L42:
+ 536              		.loc 1 92 8 is_stmt 1 view .LVU91
+ 537 0038 002D     		cmp	r5, #0
+ 538 003a ECD1     		bne	.L43
+ 539 003c 09E0     		b	.L44
+ 540              	.LVL39:
+ 541              	.L45:
+ 542              	.LBB5:
+ 543              		.loc 1 98 3 discriminator 3 view .LVU92
+ 544 003e 0023     		movs	r3, #0
+ 545 0040 4FF0FF32 		mov	r2, #-1
+ 546 0044 0DEB0401 		add	r1, sp, r4
+ 547 0048 0A48     		ldr	r0, .L47+12
+ 548 004a 0B4D     		ldr	r5, .L47+16
+ 549 004c A847     		blx	r5
+ 550              	.LVL40:
+ 551              		.loc 1 97 34 discriminator 3 view .LVU93
+ 552              		.loc 1 97 35 is_stmt 0 discriminator 3 view .LVU94
+ 553 004e 0134     		adds	r4, r4, #1
+ 554              	.LVL41:
+ 555              		.loc 1 97 35 discriminator 3 view .LVU95
+ 556 0050 E4B2     		uxtb	r4, r4
+ 557              	.LVL42:
+ 558              	.L44:
+ 559              		.loc 1 97 26 is_stmt 1 discriminator 1 view .LVU96
+ 560              		.loc 1 97 2 is_stmt 0 discriminator 1 view .LVU97
+ 561 0052 1F2C     		cmp	r4, #31
+ 562 0054 F3D9     		bls	.L45
+ 563              	.LBE5:
+ 564              		.loc 1 101 2 is_stmt 1 view .LVU98
+ 565 0056 0023     		movs	r3, #0
+ 566 0058 1A46     		mov	r2, r3
+ 567 005a 1946     		mov	r1, r3
+ 568 005c 0248     		ldr	r0, .L47
+ 569 005e 0068     		ldr	r0, [r0]
+ 570 0060 054C     		ldr	r4, .L47+16
+ 571              	.LVL43:
+ 572              		.loc 1 101 2 is_stmt 0 view .LVU99
+ 573 0062 A047     		blx	r4
+ 574              	.LVL44:
+ 575              		.loc 1 102 1 view .LVU100
+ 576 0064 09B0     		add	sp, sp, #36
+ 577              	.LCFI16:
+ 578              		.cfi_def_cfa_offset 12
+ 579              		@ sp needed
+ 580 0066 30BD     		pop	{r4, r5, pc}
+ 581              	.L48:
+ 582              		.align	2
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 11
+
+
+ 583              	.L47:
+ 584 0068 00000000 		.word	.LANCHOR4
+ 585 006c 00000000 		.word	xQueueSemaphoreTake
+ 586 0070 CDCCCCCC 		.word	-858993459
+ 587 0074 00000000 		.word	.LANCHOR1
+ 588 0078 00000000 		.word	xQueueGenericSend
+ 589              		.cfi_endproc
+ 590              	.LFE75:
+ 592              		.section	.text.UART_RecieveCharacter,"ax",%progbits
+ 593              		.align	1
+ 594              		.global	UART_RecieveCharacter
+ 595              		.syntax unified
+ 596              		.thumb
+ 597              		.thumb_func
+ 598              		.fpu softvfp
+ 600              	UART_RecieveCharacter:
+ 601              	.LFB76:
+ 602              		.loc 1 106 30 is_stmt 1 view -0
+ 603              		.cfi_startproc
+ 604              		@ args = 0, pretend = 0, frame = 8
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606 0000 10B5     		push	{r4, lr}
+ 607              	.LCFI17:
+ 608              		.cfi_def_cfa_offset 8
+ 609              		.cfi_offset 4, -8
+ 610              		.cfi_offset 14, -4
+ 611 0002 82B0     		sub	sp, sp, #8
+ 612              	.LCFI18:
+ 613              		.cfi_def_cfa_offset 16
+ 614              		.loc 1 107 2 view .LVU102
+ 615 0004 0B4C     		ldr	r4, .L51
+ 616 0006 4FF0FF31 		mov	r1, #-1
+ 617 000a 2068     		ldr	r0, [r4]
+ 618 000c 0A4B     		ldr	r3, .L51+4
+ 619 000e 9847     		blx	r3
+ 620              	.LVL45:
+ 621              		.loc 1 109 2 view .LVU103
+ 622              		.loc 1 110 2 view .LVU104
+ 623 0010 4FF0FF32 		mov	r2, #-1
+ 624 0014 0DF10701 		add	r1, sp, #7
+ 625 0018 084B     		ldr	r3, .L51+8
+ 626 001a 1868     		ldr	r0, [r3]
+ 627 001c 084B     		ldr	r3, .L51+12
+ 628 001e 9847     		blx	r3
+ 629              	.LVL46:
+ 630              		.loc 1 112 2 view .LVU105
+ 631 0020 0023     		movs	r3, #0
+ 632 0022 1A46     		mov	r2, r3
+ 633 0024 1946     		mov	r1, r3
+ 634 0026 2068     		ldr	r0, [r4]
+ 635 0028 064C     		ldr	r4, .L51+16
+ 636 002a A047     		blx	r4
+ 637              	.LVL47:
+ 638              		.loc 1 113 2 view .LVU106
+ 639              		.loc 1 114 1 is_stmt 0 view .LVU107
+ 640 002c 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 641 0030 02B0     		add	sp, sp, #8
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 12
+
+
+ 642              	.LCFI19:
+ 643              		.cfi_def_cfa_offset 8
+ 644              		@ sp needed
+ 645 0032 10BD     		pop	{r4, pc}
+ 646              	.L52:
+ 647              		.align	2
+ 648              	.L51:
+ 649 0034 00000000 		.word	.LANCHOR5
+ 650 0038 00000000 		.word	xQueueSemaphoreTake
+ 651 003c 00000000 		.word	.LANCHOR0
+ 652 0040 00000000 		.word	xQueueReceive
+ 653 0044 00000000 		.word	xQueueGenericSend
+ 654              		.cfi_endproc
+ 655              	.LFE76:
+ 657              		.section	.text.UART_RecieveString,"ax",%progbits
+ 658              		.align	1
+ 659              		.global	UART_RecieveString
+ 660              		.syntax unified
+ 661              		.thumb
+ 662              		.thumb_func
+ 663              		.fpu softvfp
+ 665              	UART_RecieveString:
+ 666              	.LFB77:
+ 667              		.loc 1 116 28 is_stmt 1 view -0
+ 668              		.cfi_startproc
+ 669              		@ args = 0, pretend = 0, frame = 8
+ 670              		@ frame_needed = 0, uses_anonymous_args = 0
+ 671 0000 30B5     		push	{r4, r5, lr}
+ 672              	.LCFI20:
+ 673              		.cfi_def_cfa_offset 12
+ 674              		.cfi_offset 4, -12
+ 675              		.cfi_offset 5, -8
+ 676              		.cfi_offset 14, -4
+ 677 0002 83B0     		sub	sp, sp, #12
+ 678              	.LCFI21:
+ 679              		.cfi_def_cfa_offset 24
+ 680              		.loc 1 118 2 view .LVU109
+ 681 0004 4FF0FF31 		mov	r1, #-1
+ 682 0008 174B     		ldr	r3, .L59
+ 683 000a 1868     		ldr	r0, [r3]
+ 684 000c 174B     		ldr	r3, .L59+4
+ 685 000e 9847     		blx	r3
+ 686              	.LVL48:
+ 687              		.loc 1 120 2 view .LVU110
+ 688              		.loc 1 120 17 is_stmt 0 view .LVU111
+ 689 0010 4020     		movs	r0, #64
+ 690 0012 174B     		ldr	r3, .L59+8
+ 691 0014 9847     		blx	r3
+ 692              	.LVL49:
+ 693              		.loc 1 122 2 is_stmt 1 view .LVU112
+ 694              		.loc 1 122 5 is_stmt 0 view .LVU113
+ 695 0016 0546     		mov	r5, r0
+ 696 0018 D8B1     		cbz	r0, .L54
+ 697              	.LBB6:
+ 698              		.loc 1 123 3 is_stmt 1 view .LVU114
+ 699              	.LVL50:
+ 700              		.loc 1 124 3 view .LVU115
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 13
+
+
+ 701              		.loc 1 124 8 is_stmt 0 view .LVU116
+ 702 001a 2023     		movs	r3, #32
+ 703 001c 8DF80730 		strb	r3, [sp, #7]
+ 704              		.loc 1 125 3 is_stmt 1 view .LVU117
+ 705              		.loc 1 123 11 is_stmt 0 view .LVU118
+ 706 0020 0024     		movs	r4, #0
+ 707              		.loc 1 125 9 view .LVU119
+ 708 0022 0CE0     		b	.L55
+ 709              	.LVL51:
+ 710              	.L57:
+ 711              		.loc 1 126 4 is_stmt 1 view .LVU120
+ 712 0024 4FF0FF32 		mov	r2, #-1
+ 713 0028 0DF10701 		add	r1, sp, #7
+ 714 002c 114B     		ldr	r3, .L59+12
+ 715 002e 1868     		ldr	r0, [r3]
+ 716 0030 114B     		ldr	r3, .L59+16
+ 717 0032 9847     		blx	r3
+ 718              	.LVL52:
+ 719              		.loc 1 127 4 view .LVU121
+ 720              		.loc 1 127 16 is_stmt 0 view .LVU122
+ 721 0034 631C     		adds	r3, r4, #1
+ 722              	.LVL53:
+ 723              		.loc 1 127 20 view .LVU123
+ 724 0036 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 725 003a 2A55     		strb	r2, [r5, r4]
+ 726              		.loc 1 127 16 view .LVU124
+ 727 003c DCB2     		uxtb	r4, r3
+ 728              	.LVL54:
+ 729              	.L55:
+ 730              		.loc 1 125 9 is_stmt 1 view .LVU125
+ 731              		.loc 1 125 20 is_stmt 0 view .LVU126
+ 732 003e 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 733              		.loc 1 125 9 view .LVU127
+ 734 0042 0D2B     		cmp	r3, #13
+ 735 0044 01D0     		beq	.L56
+ 736              		.loc 1 125 28 discriminator 1 view .LVU128
+ 737 0046 3F2C     		cmp	r4, #63
+ 738 0048 ECD9     		bls	.L57
+ 739              	.L56:
+ 740              		.loc 1 130 3 is_stmt 1 view .LVU129
+ 741              		.loc 1 130 19 is_stmt 0 view .LVU130
+ 742 004a 013C     		subs	r4, r4, #1
+ 743              	.LVL55:
+ 744              		.loc 1 130 19 view .LVU131
+ 745 004c E4B2     		uxtb	r4, r4
+ 746              	.LVL56:
+ 747              		.loc 1 130 19 view .LVU132
+ 748 004e 0023     		movs	r3, #0
+ 749 0050 2B55     		strb	r3, [r5, r4]
+ 750              	.LVL57:
+ 751              	.L54:
+ 752              		.loc 1 130 19 view .LVU133
+ 753              	.LBE6:
+ 754              		.loc 1 134 2 is_stmt 1 view .LVU134
+ 755 0052 0023     		movs	r3, #0
+ 756 0054 1A46     		mov	r2, r3
+ 757 0056 1946     		mov	r1, r3
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 14
+
+
+ 758 0058 0348     		ldr	r0, .L59
+ 759 005a 0068     		ldr	r0, [r0]
+ 760 005c 074C     		ldr	r4, .L59+20
+ 761 005e A047     		blx	r4
+ 762              	.LVL58:
+ 763              		.loc 1 135 2 view .LVU135
+ 764              		.loc 1 137 1 is_stmt 0 view .LVU136
+ 765 0060 2846     		mov	r0, r5
+ 766 0062 03B0     		add	sp, sp, #12
+ 767              	.LCFI22:
+ 768              		.cfi_def_cfa_offset 12
+ 769              		@ sp needed
+ 770 0064 30BD     		pop	{r4, r5, pc}
+ 771              	.LVL59:
+ 772              	.L60:
+ 773              		.loc 1 137 1 view .LVU137
+ 774 0066 00BF     		.align	2
+ 775              	.L59:
+ 776 0068 00000000 		.word	.LANCHOR5
+ 777 006c 00000000 		.word	xQueueSemaphoreTake
+ 778 0070 00000000 		.word	pvPortMalloc
+ 779 0074 00000000 		.word	.LANCHOR0
+ 780 0078 00000000 		.word	xQueueReceive
+ 781 007c 00000000 		.word	xQueueGenericSend
+ 782              		.cfi_endproc
+ 783              	.LFE77:
+ 785              		.section	.text.UART_RecieveDecimal,"ax",%progbits
+ 786              		.align	1
+ 787              		.global	UART_RecieveDecimal
+ 788              		.syntax unified
+ 789              		.thumb
+ 790              		.thumb_func
+ 791              		.fpu softvfp
+ 793              	UART_RecieveDecimal:
+ 794              	.LFB78:
+ 795              		.loc 1 139 32 is_stmt 1 view -0
+ 796              		.cfi_startproc
+ 797              		@ args = 0, pretend = 0, frame = 8
+ 798              		@ frame_needed = 0, uses_anonymous_args = 0
+ 799 0000 30B5     		push	{r4, r5, lr}
+ 800              	.LCFI23:
+ 801              		.cfi_def_cfa_offset 12
+ 802              		.cfi_offset 4, -12
+ 803              		.cfi_offset 5, -8
+ 804              		.cfi_offset 14, -4
+ 805 0002 83B0     		sub	sp, sp, #12
+ 806              	.LCFI24:
+ 807              		.cfi_def_cfa_offset 24
+ 808              		.loc 1 140 2 view .LVU139
+ 809 0004 4FF0FF31 		mov	r1, #-1
+ 810 0008 154B     		ldr	r3, .L67
+ 811 000a 1868     		ldr	r0, [r3]
+ 812 000c 154B     		ldr	r3, .L67+4
+ 813 000e 9847     		blx	r3
+ 814              	.LVL60:
+ 815              		.loc 1 141 2 view .LVU140
+ 816              		.loc 1 143 2 view .LVU141
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 15
+
+
+ 817              		.loc 1 143 7 is_stmt 0 view .LVU142
+ 818 0010 154B     		ldr	r3, .L67+8
+ 819 0012 8DF80730 		strb	r3, [sp, #7]
+ 820              		.loc 1 144 2 is_stmt 1 view .LVU143
+ 821              		.loc 1 141 11 is_stmt 0 view .LVU144
+ 822 0016 0024     		movs	r4, #0
+ 823              	.LVL61:
+ 824              	.L62:
+ 825              		.loc 1 144 8 is_stmt 1 view .LVU145
+ 826              		.loc 1 144 16 is_stmt 0 view .LVU146
+ 827 0018 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 828              		.loc 1 144 8 view .LVU147
+ 829 001c 0D2B     		cmp	r3, #13
+ 830 001e 15D0     		beq	.L66
+ 831              		.loc 1 145 3 is_stmt 1 view .LVU148
+ 832 0020 4FF0FF32 		mov	r2, #-1
+ 833 0024 0DF10701 		add	r1, sp, #7
+ 834 0028 104B     		ldr	r3, .L67+12
+ 835 002a 1868     		ldr	r0, [r3]
+ 836 002c 104B     		ldr	r3, .L67+16
+ 837 002e 9847     		blx	r3
+ 838              	.LVL62:
+ 839              		.loc 1 146 3 view .LVU149
+ 840              		.loc 1 146 21 is_stmt 0 view .LVU150
+ 841 0030 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 842 0034 A2F13003 		sub	r3, r2, #48
+ 843 0038 DBB2     		uxtb	r3, r3
+ 844              		.loc 1 146 6 view .LVU151
+ 845 003a 092B     		cmp	r3, #9
+ 846 003c ECD8     		bhi	.L62
+ 847              		.loc 1 147 4 is_stmt 1 view .LVU152
+ 848              		.loc 1 147 22 is_stmt 0 view .LVU153
+ 849 003e 04EB8404 		add	r4, r4, r4, lsl #2
+ 850              	.LVL63:
+ 851              		.loc 1 147 22 view .LVU154
+ 852 0042 6300     		lsls	r3, r4, #1
+ 853              		.loc 1 147 27 view .LVU155
+ 854 0044 1A44     		add	r2, r2, r3
+ 855              		.loc 1 147 12 view .LVU156
+ 856 0046 A2F13004 		sub	r4, r2, #48
+ 857              	.LVL64:
+ 858              		.loc 1 147 12 view .LVU157
+ 859 004a E5E7     		b	.L62
+ 860              	.L66:
+ 861              		.loc 1 151 2 is_stmt 1 view .LVU158
+ 862 004c 0023     		movs	r3, #0
+ 863 004e 1A46     		mov	r2, r3
+ 864 0050 1946     		mov	r1, r3
+ 865 0052 0348     		ldr	r0, .L67
+ 866 0054 0068     		ldr	r0, [r0]
+ 867 0056 074D     		ldr	r5, .L67+20
+ 868 0058 A847     		blx	r5
+ 869              	.LVL65:
+ 870              		.loc 1 152 2 view .LVU159
+ 871              		.loc 1 153 1 is_stmt 0 view .LVU160
+ 872 005a 2046     		mov	r0, r4
+ 873 005c 03B0     		add	sp, sp, #12
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 16
+
+
+ 874              	.LCFI25:
+ 875              		.cfi_def_cfa_offset 12
+ 876              		@ sp needed
+ 877 005e 30BD     		pop	{r4, r5, pc}
+ 878              	.LVL66:
+ 879              	.L68:
+ 880              		.loc 1 153 1 view .LVU161
+ 881              		.align	2
+ 882              	.L67:
+ 883 0060 00000000 		.word	.LANCHOR5
+ 884 0064 00000000 		.word	xQueueSemaphoreTake
+ 885 0068 00000000 		.word	.LANCHOR6
+ 886 006c 00000000 		.word	.LANCHOR0
+ 887 0070 00000000 		.word	xQueueReceive
+ 888 0074 00000000 		.word	xQueueGenericSend
+ 889              		.cfi_endproc
+ 890              	.LFE78:
+ 892              		.section	.rodata.UART_Init.str1.4,"aMS",%progbits,1
+ 893              		.align	2
+ 894              	.LC1:
+ 895 0000 00       		.ascii	"\000"
+ 896              		.section	.text.UART_Init,"ax",%progbits
+ 897              		.align	1
+ 898              		.global	UART_Init
+ 899              		.syntax unified
+ 900              		.thumb
+ 901              		.thumb_func
+ 902              		.fpu softvfp
+ 904              	UART_Init:
+ 905              	.LFB79:
+ 906              		.loc 1 156 17 is_stmt 1 view -0
+ 907              		.cfi_startproc
+ 908              		@ args = 0, pretend = 0, frame = 0
+ 909              		@ frame_needed = 0, uses_anonymous_args = 0
+ 910 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 911              	.LCFI26:
+ 912              		.cfi_def_cfa_offset 20
+ 913              		.cfi_offset 4, -20
+ 914              		.cfi_offset 5, -16
+ 915              		.cfi_offset 6, -12
+ 916              		.cfi_offset 7, -8
+ 917              		.cfi_offset 14, -4
+ 918 0002 83B0     		sub	sp, sp, #12
+ 919              	.LCFI27:
+ 920              		.cfi_def_cfa_offset 32
+ 921              		.loc 1 157 2 view .LVU163
+ 922 0004 154F     		ldr	r7, .L71
+ 923 0006 164B     		ldr	r3, .L71+4
+ 924 0008 0193     		str	r3, [sp, #4]
+ 925 000a 0423     		movs	r3, #4
+ 926 000c 0093     		str	r3, [sp]
+ 927 000e 0023     		movs	r3, #0
+ 928 0010 4022     		movs	r2, #64
+ 929 0012 3946     		mov	r1, r7
+ 930 0014 1348     		ldr	r0, .L71+8
+ 931 0016 144E     		ldr	r6, .L71+12
+ 932 0018 B047     		blx	r6
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 17
+
+
+ 933              	.LVL67:
+ 934              		.loc 1 158 2 view .LVU164
+ 935              		.loc 1 158 29 is_stmt 0 view .LVU165
+ 936 001a 0022     		movs	r2, #0
+ 937 001c 0121     		movs	r1, #1
+ 938 001e 4020     		movs	r0, #64
+ 939 0020 124D     		ldr	r5, .L71+16
+ 940 0022 A847     		blx	r5
+ 941              	.LVL68:
+ 942              		.loc 1 158 27 view .LVU166
+ 943 0024 124B     		ldr	r3, .L71+20
+ 944 0026 1860     		str	r0, [r3]
+ 945              		.loc 1 159 2 is_stmt 1 view .LVU167
+ 946              		.loc 1 159 33 is_stmt 0 view .LVU168
+ 947 0028 0120     		movs	r0, #1
+ 948 002a 124C     		ldr	r4, .L71+24
+ 949 002c A047     		blx	r4
+ 950              	.LVL69:
+ 951              		.loc 1 159 31 view .LVU169
+ 952 002e 124B     		ldr	r3, .L71+28
+ 953 0030 1860     		str	r0, [r3]
+ 954              		.loc 1 161 2 is_stmt 1 view .LVU170
+ 955 0032 124B     		ldr	r3, .L71+32
+ 956 0034 0193     		str	r3, [sp, #4]
+ 957 0036 1423     		movs	r3, #20
+ 958 0038 0093     		str	r3, [sp]
+ 959 003a 0023     		movs	r3, #0
+ 960 003c 4022     		movs	r2, #64
+ 961 003e 3946     		mov	r1, r7
+ 962 0040 0F48     		ldr	r0, .L71+36
+ 963 0042 B047     		blx	r6
+ 964              	.LVL70:
+ 965              		.loc 1 162 2 view .LVU171
+ 966              		.loc 1 162 28 is_stmt 0 view .LVU172
+ 967 0044 0022     		movs	r2, #0
+ 968 0046 0121     		movs	r1, #1
+ 969 0048 4020     		movs	r0, #64
+ 970 004a A847     		blx	r5
+ 971              	.LVL71:
+ 972              		.loc 1 162 26 view .LVU173
+ 973 004c 0D4B     		ldr	r3, .L71+40
+ 974 004e 1860     		str	r0, [r3]
+ 975              		.loc 1 163 2 is_stmt 1 view .LVU174
+ 976              		.loc 1 163 32 is_stmt 0 view .LVU175
+ 977 0050 0120     		movs	r0, #1
+ 978 0052 A047     		blx	r4
+ 979              	.LVL72:
+ 980              		.loc 1 163 30 view .LVU176
+ 981 0054 0C4B     		ldr	r3, .L71+44
+ 982 0056 1860     		str	r0, [r3]
+ 983              		.loc 1 165 1 view .LVU177
+ 984 0058 03B0     		add	sp, sp, #12
+ 985              	.LCFI28:
+ 986              		.cfi_def_cfa_offset 20
+ 987              		@ sp needed
+ 988 005a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 989              	.L72:
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 18
+
+
+ 990              		.align	2
+ 991              	.L71:
+ 992 005c 00000000 		.word	.LC1
+ 993 0060 00000000 		.word	.LANCHOR2
+ 994 0064 00000000 		.word	UART_TransmitTask
+ 995 0068 00000000 		.word	xTaskCreate
+ 996 006c 00000000 		.word	xQueueGenericCreate
+ 997 0070 00000000 		.word	.LANCHOR1
+ 998 0074 00000000 		.word	xQueueCreateMutex
+ 999 0078 00000000 		.word	.LANCHOR4
+ 1000 007c 00000000 		.word	.LANCHOR3
+ 1001 0080 00000000 		.word	UART_RecieveTask
+ 1002 0084 00000000 		.word	.LANCHOR0
+ 1003 0088 00000000 		.word	.LANCHOR5
+ 1004              		.cfi_endproc
+ 1005              	.LFE79:
+ 1007              		.section	.rodata
+ 1008              		.align	2
+ 1009              		.set	.LANCHOR6,. + 0
+ 1010              	.LC0:
+ 1011 0000 0000     		.ascii	"\000\000"
+ 1012              		.section	.bss.UART_RecieveQueueHandle,"aw",%nobits
+ 1013              		.align	2
+ 1014              		.set	.LANCHOR0,. + 0
+ 1017              	UART_RecieveQueueHandle:
+ 1018 0000 00000000 		.space	4
+ 1019              		.section	.bss.UART_RecieveSemaphoreHandle,"aw",%nobits
+ 1020              		.align	2
+ 1021              		.set	.LANCHOR5,. + 0
+ 1024              	UART_RecieveSemaphoreHandle:
+ 1025 0000 00000000 		.space	4
+ 1026              		.section	.bss.UART_RecieveTaskHandle,"aw",%nobits
+ 1027              		.align	2
+ 1028              		.set	.LANCHOR3,. + 0
+ 1031              	UART_RecieveTaskHandle:
+ 1032 0000 00000000 		.space	4
+ 1033              		.section	.bss.UART_TransmitQueueHandle,"aw",%nobits
+ 1034              		.align	2
+ 1035              		.set	.LANCHOR1,. + 0
+ 1038              	UART_TransmitQueueHandle:
+ 1039 0000 00000000 		.space	4
+ 1040              		.section	.bss.UART_TransmitSemaphoreHandle,"aw",%nobits
+ 1041              		.align	2
+ 1042              		.set	.LANCHOR4,. + 0
+ 1045              	UART_TransmitSemaphoreHandle:
+ 1046 0000 00000000 		.space	4
+ 1047              		.section	.bss.UART_TransmitTaskHandle,"aw",%nobits
+ 1048              		.align	2
+ 1049              		.set	.LANCHOR2,. + 0
+ 1052              	UART_TransmitTaskHandle:
+ 1053 0000 00000000 		.space	4
+ 1054              		.text
+ 1055              	.Letext0:
+ 1056              		.file 2 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\mac
+ 1057              		.file 3 "../e:\\fakultet\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\include\\sys
+ 1058              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 1059              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 19
+
+
+ 1060              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 1061              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 1062              		.file 8 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 1063              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1064              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1065              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 1066              		.file 12 "../Core/Inc/usart.h"
+ 1067              		.file 13 "../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
+ 1068              		.file 14 "../<built-in>"
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_uart.c
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:16     .text.UART_RecieveTask:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:23     .text.UART_RecieveTask:0000000000000000 UART_RecieveTask
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:70     .text.UART_RecieveTask:000000000000002c $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:79     .text.UART_TransmitTask:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:85     .text.UART_TransmitTask:0000000000000000 UART_TransmitTask
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:131    .text.UART_TransmitTask:000000000000002c $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:140    .text.HAL_UART_TxCpltCallback:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:147    .text.HAL_UART_TxCpltCallback:0000000000000000 HAL_UART_TxCpltCallback
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:217    .text.HAL_UART_TxCpltCallback:000000000000003c $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:224    .text.HAL_UART_RxCpltCallback:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:231    .text.HAL_UART_RxCpltCallback:0000000000000000 HAL_UART_RxCpltCallback
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:301    .text.HAL_UART_RxCpltCallback:000000000000003c $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:308    .text.UART_TransmitCharacter:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:315    .text.UART_TransmitCharacter:0000000000000000 UART_TransmitCharacter
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:366    .text.UART_TransmitCharacter:0000000000000034 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:374    .text.UART_TransmitString:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:381    .text.UART_TransmitString:0000000000000000 UART_TransmitString
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:459    .text.UART_TransmitString:0000000000000040 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:468    .text.UART_TransmitDecimal:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:475    .text.UART_TransmitDecimal:0000000000000000 UART_TransmitDecimal
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:584    .text.UART_TransmitDecimal:0000000000000068 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:593    .text.UART_RecieveCharacter:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:600    .text.UART_RecieveCharacter:0000000000000000 UART_RecieveCharacter
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:649    .text.UART_RecieveCharacter:0000000000000034 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:658    .text.UART_RecieveString:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:665    .text.UART_RecieveString:0000000000000000 UART_RecieveString
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:776    .text.UART_RecieveString:0000000000000068 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:786    .text.UART_RecieveDecimal:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:793    .text.UART_RecieveDecimal:0000000000000000 UART_RecieveDecimal
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:883    .text.UART_RecieveDecimal:0000000000000060 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:893    .rodata.UART_Init.str1.4:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:897    .text.UART_Init:0000000000000000 $t
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:904    .text.UART_Init:0000000000000000 UART_Init
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:992    .text.UART_Init:000000000000005c $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1008   .rodata:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1013   .bss.UART_RecieveQueueHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1017   .bss.UART_RecieveQueueHandle:0000000000000000 UART_RecieveQueueHandle
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1020   .bss.UART_RecieveSemaphoreHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1024   .bss.UART_RecieveSemaphoreHandle:0000000000000000 UART_RecieveSemaphoreHandle
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1027   .bss.UART_RecieveTaskHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1031   .bss.UART_RecieveTaskHandle:0000000000000000 UART_RecieveTaskHandle
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1034   .bss.UART_TransmitQueueHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1038   .bss.UART_TransmitQueueHandle:0000000000000000 UART_TransmitQueueHandle
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1041   .bss.UART_TransmitSemaphoreHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1045   .bss.UART_TransmitSemaphoreHandle:0000000000000000 UART_TransmitSemaphoreHandle
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1048   .bss.UART_TransmitTaskHandle:0000000000000000 $d
+C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s:1052   .bss.UART_TransmitTaskHandle:0000000000000000 UART_TransmitTaskHandle
+
+UNDEFINED SYMBOLS
+huart1
+HAL_UART_Receive_IT
+ulTaskNotifyTake
+xQueueGenericSend
+xQueueReceive
+HAL_UART_Transmit_IT
+ARM GAS  C:\Users\wokad\AppData\Local\Temp\ccZybaLo.s 			page 21
+
+
+vTaskNotifyGiveFromISR
+xQueueSemaphoreTake
+strlen
+pvPortMalloc
+xTaskCreate
+xQueueGenericCreate
+xQueueCreateMutex

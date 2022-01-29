@@ -18,7 +18,7 @@ static TaskHandle_t TEMP_TaskHandle;
 static QueueHandle_t TEMP_QueueHandle;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-	if(hadc->Instance == hadc1->Instance){
+	if(hadc->Instance == hadc1.Instance){
 		BaseType_t woken = pdFALSE;
 		vTaskNotifyGiveFromISR(TEMP_TaskHandle, &woken);
 		portYIELD_FROM_ISR(woken);
